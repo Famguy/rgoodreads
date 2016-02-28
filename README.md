@@ -51,20 +51,20 @@ Look up an author by their Goodreads Author ID:
 ```r
 a <- author('id')
 
-author$id              # => author id
-author$name            # => author's name
-author$link            # => link to author's Goodreads page
-author$fans_count      # => number of fans author has on Goodreads
-author$image_url       # => link to image of the author
-author$small_image_url # => link to smaller of the author
-author$about           # => description of the author
-author$influences      # => list of links to author's influences
-author$works_count     # => number of works by the author in Goodreads
-author$gender          # => author's gender
-author$hometown        # => author's hometown
-author$born_at         # => author's birthdate
-author$died_at         # => date of author's death
-etc..
+a$id              # => author id
+a$name            # => author's name
+a$link            # => link to author's Goodreads page
+a$fans_count      # => number of fans author has on Goodreads
+a$image_url       # => link to image of the author
+a$small_image_url # => link to smaller of the author
+a$about           # => description of the author
+a$influences      # => list of links to author's influences
+a$works_count     # => number of works by the author in Goodreads
+a$gender          # => author's gender
+a$hometown        # => author's hometown
+a$born_at         # => author's birthdate
+a$died_at         # => date of author's death
+...
 ```
 
 Look up an author by name:
@@ -86,20 +86,20 @@ Get review details:
 ```r
 r <- review('id')
 
-review.id         # => review id
-review.user       # => user information
-review.book       # => uook information
-review.rating     # => user rating
+r$id         # => review id
+r$user       # => user information
+r$book       # => uook information
+r$rating     # => user rating
 ```
 
-### Shelves
+### Users
 
-Get the books on a user's shelf:
+Get user details:
 
-```ruby
-shelf = client.shelf(user_id, shelf_name)
+```r
+u <- user('user_id')
 
-shelf.books  # array of books on this shelf
+u.books  # array of books on this shelf
 shelf.start  # start index of this page of paginated results
 shelf.end    # end index of this page of paginated results
 shelf.total  # total number of books on this shelf
