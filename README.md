@@ -30,103 +30,61 @@ Sys.setenv(GOODREADS_KEY = "YOUR_KEY_HERE")
 
 After that, queries made from your system will use your key.
 
-
-### Global configuration
-
-You can define client credentials on global level. Just create an initializer file (if using rails) under
-`config/initializers`:
-
-``` ruby
-Goodreads.configure(
-  :api_key => 'KEY',
-  :api_secret => 'SECRET'
-)
-```
-
-Get global configuration:
-
-``` ruby
-Goodreads.configuration # => {:api_key => 'YOUR_KEY'}
-```
-
-In case you need to reset options:
-
-```ruby
-Goodreads.reset_configuration
-```
-
 ## Examples
+
+Methods for querying objects from the API are implemented in functions of the form [object]. Each of these functions returns a data frame, with one row per object.
 
 ### Lookup books
 
 You can lookup a book by ISBN, ID or Title:
 
-```ruby
-client.book('id')
-client.book_by_isbn('ISBN')
-client.book_by_title('Book title')
-```
-
-Search for books (by title, isbn, genre):
-
-```ruby
-search = client.search_books('The Lord Of The Rings')
-
-search.results.work.each do |book|
-  book.id        # => book id
-  book.title     # => book title
-end
+```r
+b <- book('id')
+b <- book_by_isbn('ISBN')
+b <- book_by_title('Book title')
 ```
 
 ### Authors
  
 Look up an author by their Goodreads Author ID:
 
-```ruby
-author = client.author('id')
+```r
+a <- author('id')
 
-author.id              # => author id
-author.name            # => author's name
-author.link            # => link to author's Goodreads page
-author.fans_count      # => number of fans author has on Goodreads
-author.image_url       # => link to image of the author
-author.small_image_url # => link to smaller of the author
-author.about           # => description of the author
-author.influences      # => list of links to author's influences
-author.works_count     # => number of works by the author in Goodreads
-author.gender          # => author's gender
-author.hometown        # => author's hometown
-author.born_at         # => author's birthdate
-author.died_at         # => date of author's death
+author$id              # => author id
+author$name            # => author's name
+author$link            # => link to author's Goodreads page
+author$fans_count      # => number of fans author has on Goodreads
+author$image_url       # => link to image of the author
+author$small_image_url # => link to smaller of the author
+author$about           # => description of the author
+author$influences      # => list of links to author's influences
+author$works_count     # => number of works by the author in Goodreads
+author$gender          # => author's gender
+author$hometown        # => author's hometown
+author$born_at         # => author's birthdate
+author$died_at         # => date of author's death
+etc..
 ```
 
 Look up an author by name:
 
-```ruby
-author = client.author_by_name('Author Name')
-
-author.id     # => author id
-author.name   # => author name
-author.link   # => link to author's Goodreads page
+```r
+a <- author_by_name('Author Name')
 ```
 
 ### Reviews
 
 Pull recent reviews:
 
-```ruby
-client.recent_reviews.each do |r|
-  r.id            # => review id
-  r.book.title    # => review book title
-  r.body          # => review message
-  r.user.name     # => review user name
-end
+```r
+r <- recent_reviews()
 ```
 
 Get review details:
 
-```ruby
-review = client.review('id')
+```r
+r <- review('id')
 
 review.id         # => review id
 review.user       # => user information
