@@ -184,6 +184,6 @@ end
 The `sort` parameter is optional, and defaults to `my_activity`. 
 For other sorting options, [see here](http://www.goodreads.com/api#group.list).
 
-## Contact/Feedback
+## Feedback
 
-Sagun Pai <sagung.pai@gmail.com>
+Feel free to raise issues [here](http://github.com/famguy/rgoodreads/issues).
