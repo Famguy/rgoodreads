@@ -20,6 +20,8 @@
 # goodreads_GET('book/isbn',isbn='0618640150')
 # goodreads_GET('book/title',title='The Lord Of The Rings')
 # goodreads_GET('search/index',q='The Lord Of The Rings')
+# author id 1077326
+# author Chetan Bhagat
 
 goodreads_GET <- function(path, site = "goodreads", page = 1, num_pages = 1, ...) {
     # auth <- github_auth(pat)
@@ -32,17 +34,10 @@ goodreads_GET <- function(path, site = "goodreads", page = 1, num_pages = 1, ...
         query$key <- goodreads_key
     }
 
-    
-#    tbls <- NULL
-#    tbls <- c(tbls, list(tbl))
-    print (query)
     req <- httr::GET(base_path, path = path, query = query)
-    print(req)
     if (httr::http_status(req)$category != "Success"){
-    	print (paste0("ERROR ",httr::http_status(req)$status_code," in request!"))
-#      tbl <- goodreads_parse_group(req)
+    	print (paste0(httr::http_status(req)$reason," ",httr::http_status(req)$message))
     }
-#    httr::stop_for_status(req)
 
     req
 }
@@ -133,6 +128,9 @@ goodreads_parse_user <- function(req) {
     d$key <- NULL
     d$method <- NULL
     d$user_shelves <- NULL
+    d$user_statuses <- NULL
+    d$favorite_books <- NULL
+    d$favorite_authors <- NULL
     row.names(d)<-1:nrow(d)
     d
 }
@@ -146,7 +144,6 @@ goodreads_parse_group <- function(req) {
     d$authentication <- NULL
     d$key <- NULL
     d$method <- NULL
-#    d$user_shelves <- NULL
     row.names(d)<-1:nrow(d)
     d
 }
