@@ -98,9 +98,7 @@ goodreads_parse_review <- function(req) {
     text <- httr::content(req, as = "text")
     if (identical(text, "")) stop("No output to parse", call. = FALSE)
     j <- XML::xmlParse(text)
-    print(j)
     d <- XML::xmlToDataFrame(nodes = XML::getNodeSet(j, "//review"))
-    print (d)
     d <- d[!(is.na(d$id)),]
     d$authentication <- NULL
     d$key <- NULL
