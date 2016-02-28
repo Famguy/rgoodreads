@@ -1,4 +1,4 @@
-# Rgoodreads - an R package to interact with the Goodreads API
+# Rgoodreads - an R package for the Goodreads API
 ----------------------------
 
 This R package acts as a wrapper for the read-only features of the [Goodreads API](https://www.goodreads.com/api) with the ability to retrieve information on books, authors, users, reviews, etc. so that they can be analyzed in R. 
@@ -99,48 +99,26 @@ Get user details:
 ```r
 u <- user('user_id')
 
-u.books  # array of books on this shelf
-shelf.start  # start index of this page of paginated results
-shelf.end    # end index of this page of paginated results
-shelf.total  # total number of books on this shelf
+u$name       # name of the user
+u$age        # user age
+u$location   # user location
+u$gender     # user gender
 ```
 
 ### Groups
 
-Get group details:
+Search groups:
 
-```ruby
-group = client.group('id')
+```r
+g <- group_search('query')
 
-group.id                 # => group id
-group.title              # => group title
-group.access             # => group's access settings
-                         # => (e.g., public or private)
-group.group_users_count  # => number of users in the group
+g$id                 # => group id
+g$title              # => group title
+g$access             # => group's access settings
+                     # => (e.g., public or private)
+g$users_count        # => number of users in the group
 ```
 
-List the groups a given user is a member of:
-
-```ruby
-group_list = client.group_list('user_id', 'sort')
-
-group_list.total         # => total number of groups
-group_list.group.count  # => number of groups returned in the request
-
-# Loop through the list to get details for each of the groups.
-
-group_list.group.each do |g|
-  g.id                 # => group id
-  g.access             # => access settings (private, public)
-  g.users_count        # => number of members
-  g.title              # => title
-  g.image_url          # => url of the group's image
-  g.last_activity_at   # => date and time of the group's last activity
-end
-```
-
-The `sort` parameter is optional, and defaults to `my_activity`. 
-For other sorting options, [see here](http://www.goodreads.com/api#group.list).
 
 ## Feedback
 
