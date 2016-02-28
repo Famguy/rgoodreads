@@ -28,8 +28,8 @@ goodreads_GET <- function(path, site = "goodreads", page = 1, num_pages = 1, ...
     base_path <- "https://www.goodreads.com/"
     query <- list(site = site, page = page, ...)
 
-#    goodreads_key <- Sys.getenv("GOODREADS_API__KEY")
-	goodreads_key <- "gYWXsF4VUU2YcXkKryosbA"
+    goodreads_key <- Sys.getenv("GOODREADS_KEY")
+# 	goodreads_key <- "gYWXsF4VUU2YcXkKryosbA"
     if (goodreads_key != "") {
         query$key <- goodreads_key
     }
