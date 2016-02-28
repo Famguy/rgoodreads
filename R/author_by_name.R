@@ -1,3 +1,10 @@
+#' Query author by name from the Goodreads API 
+#'
+#' Query for Goodreads authors based on names.
+#' @param name Name of the author
+#' @return A \code{data.frame} of author with corresponding information
+#'
+#' @export
 author_by_name <- function(name) {
     d <- NULL
     ggr <- goodreads_GET (paste0('api/author_url/',RCurl::curlEscape(name)))

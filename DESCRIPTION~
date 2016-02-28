@@ -1,0 +1,18 @@
+Package: rgoodreads
+Type: Package
+Title: Client for the Goodreads API
+Version: 0.1
+Date: 2016-02-23
+Author: Sagun Pai
+Maintainer: Who to complain to <yourfault@somewhere.net>
+Description: More about what it does (maybe more than one line)
+License: MIT
+Depends: R (>= 3.1.1)
+Imports:
+    httr,
+    dplyr (>= 0.4.1),
+    jsonlite
+LazyData: TRUE
+URL: http://github.com/famguy/rgoodreads
+BugReports: http://github.com/famguy/rgoodreads/issues
+
