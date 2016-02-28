@@ -22,14 +22,14 @@ devtools::install_github("famguy/rgoodreads")
 
 ## Getting Started
 
-Before using Goodreads API you must create a new application. Visit [signup form](http://www.goodreads.com/api/keys) for details.
+Before using Goodreads API you must create a new application and get an API key. Visit [signup form](http://www.goodreads.com/api/keys) for details. Once you have your API key, set up an environment variable, by adding the following line to your `.Rprofile`:
 
-Setup client:
-
-``` ruby
-client = Goodreads::Client.new(:api_key => 'KEY', :api_secret => 'SECRET')
-client = Goodreads.new(:api_key => 'KEY') # short version
+```r
+Sys.setenv(GOODREADS_KEY = "YOUR_KEY_HERE")
 ```
+
+After that, queries made from your system will use your key.
+
 
 ### Global configuration
 
