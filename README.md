@@ -184,30 +184,6 @@ end
 The `sort` parameter is optional, and defaults to `my_activity`. 
 For other sorting options, [see here](http://www.goodreads.com/api#group.list).
 
-### OAuth
+## Contact/Feedback
 
-For API calls requiring permission, such as write operations or browsing friends, 
-see our [OAuth tutorial](examples/oauth.md).
-
-## Testing
-
-To run the test suite:
-
-```
-bundle exec rake test
-```
-
-## Contributions
-
-You're welcome to submit patches and new features.
-
-- Create a new branch for your feature of bugfix
-- Add tests so it does not break any existing code
-- Open a new pull request
-- Check official [API documentation](http://www.goodreads.com/api)
-
-## License
-
-The MIT License (MIT)
-
-Copyright (c) 2011-2015 Dan Sosedoff, <dan.sosedoff@gmail.com>
+Sagun Pai <sagung.pai@gmail.com>
