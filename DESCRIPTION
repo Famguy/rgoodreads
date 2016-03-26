@@ -4,8 +4,8 @@ Title: Client for the Goodreads API
 Version: 0.1
 Date: 2016-02-23
 Author: Sagun Pai
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
+Maintainer: <sagung.pai@gmail.com>
+Description: This R package acts as a wrapper for the read-only features of the Goodreads API with the ability to retrieve information on books, authors, users, reviews, etc. so that they can be analyzed in R.
 License: MIT
 Depends:
     R (>= 3.1.1)
